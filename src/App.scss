@@ -1,0 +1,259 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#root {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.image-card {
+  width: 30vw;
+  height: 30vw;
+  object-fit: cover;
+}
+
+#lightbox-img {
+  height: 80vh;
+  max-width: 90vw;
+  object-fit: cover;
+}
+
+#lightbox {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*Completely optional styling that has nothing to do with the lightbox*/
+button {
+  color: white;
+  border: 2px solid #a167da;
+  background-color: #a167da;
+  font-size: 1.2rem;
+}
+
+a {
+  color: #7a4baa;
+}
+
+h1 {
+  color: #7a4baa;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: .9rem;
+}
+
+img:hover,
+button:hover {
+  cursor: pointer;
+}
+
+body {
+  background-color: rgba(196, 155, 237, 0.45);
+}
+
+.posts {
+  display: flex;
+  justify-content: space-around;
+  // margin: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin-top: 10%;
+  width: 40%;
+  // height: 200px;
+  padding: 10px;
+  margin: 10px;
+  background: #fff;
+  border-radius: 4px;
+  flex-direction: row;
+
+  .leftContent {
+    border-right: 2px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    background: cornsilk;
+    padding: 10px;
+    margin: 5px;
+
+    .thumbnail {
+      border-radius: 50%;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    .fullName {
+      color: red;
+      font-size: 15px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: capitalize;
+      font-family: jura;
+      text-overflow: ellipsis;
+    }
+
+    .dob {
+      color: gray;
+      font-size: 12px;
+      font-weight: bold;
+      font-family: poppins;
+      padding-top: 10px;
+
+      .label {
+        display: none;
+      }
+    }
+  }
+
+  .rightContent {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    width: 80%;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .userInfo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      width: 100%;
+      border-bottom: 1px solid;
+
+      .email_name_phone{
+        display: flex;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        padding: 10px;
+        flex-direction: column;
+
+        .userName ,.email, .phoneNo{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          align-content: center;
+          .label{
+            text-align: left !important;
+            display: flex;
+            justify-content: start;
+            font-family: audio;
+          }
+          .field{
+            text-align: right !important;
+            display: flex;
+            justify-content: end;
+            font-size: 12px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+
+    .address {
+      color: grey;
+      text-transform: capitalize;
+      font-size: 10px;
+      font-family: jura;
+      font-style: italic;
+      text-align: left;
+      justify-content: left;
+      align-items: left !important;
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      .add_dtl{
+        width: 100%;
+      }
+
+      .add_label {
+        color: #282c34;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 300;
+        width: 100%;
+        display: flex;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.label {
+  color: #282c34;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 300;
+  width: 100%;
+}
+
+.searchBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    margin: 20px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    position: fixed;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+    height: 2%;
+  }
+}

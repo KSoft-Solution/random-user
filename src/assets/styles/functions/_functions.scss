@@ -1,0 +1,36 @@
+@function z($name) {
+    @if index($z-indexes, $name) {
+        @return (length($z-indexes) - index($z-indexes, $name))+1;
+    }
+
+    @else {
+        @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+        @return null;
+    }
+}
+
+$z-indexes: ("outdated-browser",
+    "modal",
+    "site-header",
+    "page-wrapper",
+    "site-footer"
+);
+
+.site-header {
+    z-index: z('site-header');
+}
+
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+p {
+    @include font-size(14px)
+}
